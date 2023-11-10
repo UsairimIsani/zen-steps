@@ -1,0 +1,15 @@
+POST {{base_url_local}}/openai
+Content-Type: application/json
+
+{
+  "content": "Hello Chatgpt"
+}
+
+###
+
+POST {{base_url_local}}/speech
+Content-Type: application/json
+
+{
+  "content": "You are a therapist giving a therapy session. Give me a 435 word inspirational meditation session about overcoming opioid addiction and chronic pain. Only output the actual session without ambiance instructions, quotation marks or Certainly, here's a 435-word inspirational meditation session on overcoming opioid addiction:. Remember the key points for future reference"
+}

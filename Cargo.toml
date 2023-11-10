@@ -7,7 +7,7 @@ edition = "2021"
 
 [dependencies]
 # (De)Serialization
-serde = "1.0.192"
+serde = { version = "1.0.192", features = ["derive"] }
 serde_json = "1.0.108"
 
 # Async and web server
@@ -33,16 +33,10 @@ tracing-subscriber = { version = "0.3.17", features = ["env-filter"] }
 # Env Variables
 envy = "0.4.2"
 
-# Self-signed TLS certificates
-rcgen = "0.11.3"
-
 # Error Handling
-anyhow = "1.0.75"
 thiserror = "1.0.50"
-
-chrono = { version = "0.4.31", features = ["serde"]}
 
 reqwest = { version = "0.11.22", features = ["rustls-tls-webpki-roots", "json", "multipart"], default-features = false}
 
-clap = {version = "4.4.7", features = ["derive"]}
-strum = { version = "0.25.0", features = ["derive"] }
+openai-api-rs = "2.0.5"
+chrono = { version = "0.4.31", features = ["serde"]}
