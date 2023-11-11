@@ -12,21 +12,21 @@ use tower::ServiceBuilder;
 use tower_http::trace::TraceLayer;
 
 pub fn public(state: AppState) -> Router {
-    let cors = tower_http::cors::CorsLayer::new()
-        //     .allow_methods(vec![
-        //         Method::GET,
-        //         Method::POST,
-        //         Method::PATCH,
-        //         Method::DELETE,
-        //     ])
-        //     .allow_headers(vec![
-        //         ACCEPT,
-        //         ACCEPT_LANGUAGE,
-        //         AUTHORIZATION,
-        //         CONTENT_LANGUAGE,
-        //         CONTENT_TYPE,
-        //     ])
-        .allow_origin("*".parse::<axum::http::HeaderValue>().unwrap());
+    let cors = tower_http::cors::CorsLayer::permissive();
+    //     .allow_methods(vec![
+    //         Method::GET,
+    //         Method::POST,
+    //         Method::PATCH,
+    //         Method::DELETE,
+    //     ])
+    //     .allow_headers(vec![
+    //         ACCEPT,
+    //         ACCEPT_LANGUAGE,
+    //         AUTHORIZATION,
+    //         CONTENT_LANGUAGE,
+    //         CONTENT_TYPE,
+    //     ])
+    // .allow_origin("*".parse::<axum::http::HeaderValue>().unwrap());
     Router::new()
         .route("/status", get(status))
         .route("/openai", post(open_ai))
@@ -34,7 +34,7 @@ pub fn public(state: AppState) -> Router {
         .with_state(state)
         .layer(
             ServiceBuilder::new()
-                .layer(cors)
-                .layer(TraceLayer::new_for_http()),
+                .layer(TraceLayer::new_for_http())
+                .layer(cors),
         )
 }
