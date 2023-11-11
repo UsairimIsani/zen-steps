@@ -1,5 +1,5 @@
-GET {{base_url_prod}}
+GET {{base_url_prod}}/status
 
 ###
 
-GET {{base_url_local}}
+GET {{base_url_local}}/status
