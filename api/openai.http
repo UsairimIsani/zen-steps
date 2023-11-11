@@ -1,4 +1,4 @@
-POST {{base_url_local}}/openai
+POST {{base_url_prod}}/openai
 Content-Type: application/json
 
 {
@@ -24,7 +24,7 @@ Content-Type: application/json
 
 ###
 
-POST {{base_url_local}}/speech
+POST {{base_url_prod}}/speech
 Content-Type: application/json
 
 {
