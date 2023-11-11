@@ -17,7 +17,7 @@ impl Default for EnvConfig {
     fn default() -> Self {
         Self {
             listen_port: 3000,
-            listen_ip: Ipv4Addr::new(127, 0, 0, 1),
+            listen_ip: Ipv4Addr::new(0, 0, 0, 0),
             openai_api_base: "".to_string(),
             openai_api_key: "".to_string(),
             openai_api_text_to_speech_model_endpoint: "".to_string(),
