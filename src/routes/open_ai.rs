@@ -4,11 +4,9 @@ use axum::body::Bytes;
 use crate::error::Error;
 use crate::extract::Json;
 use openai_api_rs::v1::api::Client;
-use openai_api_rs::v1::chat_completion::{self, ChatCompletionMessage, ChatCompletionRequest};
+use openai_api_rs::v1::chat_completion::{ChatCompletionMessage, ChatCompletionRequest};
 use openai_api_rs::v1::common::GPT3_5_TURBO;
 use serde::{Deserialize, Serialize};
-use tokio::fs;
-use tokio::io::AsyncWriteExt;
 
 #[derive(Debug, Deserialize, Serialize)]
 pub struct OpenAiPrompt {
