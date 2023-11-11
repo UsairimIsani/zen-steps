@@ -34,7 +34,7 @@ pub fn public(state: AppState) -> Router {
         .with_state(state)
         .layer(
             ServiceBuilder::new()
-                .layer(TraceLayer::new_for_http())
-                .layer(cors),
+                .layer(cors)
+                .layer(TraceLayer::new_for_http()),
         )
 }
