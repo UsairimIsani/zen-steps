@@ -74,13 +74,13 @@ pub async fn open_ai_text_to_speech(
         .bytes()
         .await?;
 
-    let mut file = fs::OpenOptions::new()
-        .create(true) // To create a new file
-        .write(true)
-        .open(format!("test-{}.mp3", chrono::Utc::now().time()))
-        .await?;
-
-    file.write_all(&bytes).await?;
+    // let mut file = fs::OpenOptions::new()
+    //     .create(true) // To create a new file
+    //     .write(true)
+    //     .open(format!("test-{}.mp3", chrono::Utc::now().time()))
+    //     .await?;
+    //
+    // file.write_all(&bytes).await?;
 
     Ok(bytes)
 }
